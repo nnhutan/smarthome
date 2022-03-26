@@ -1,0 +1,17 @@
+:root {
+  --logo-color: #00008b;
+  --icon-color: #555;
+  --primary-text-color: #555;
+  --sidebar-color: #fbfbff;
+}
+
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+}

@@ -1,0 +1,133 @@
+@mixin dropdown-style {
+  display: none;
+  width: 300px;
+  height: fit-content;
+  min-height: 150px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 16px 20px;
+  animation: drop 0.3s ease-in-out;
+  transform-origin: top center;
+
+  .item {
+    display: block;
+    padding: 4px 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    border-bottom: solid 1px #ccc;
+    transform: translateX(0);
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(6px);
+    }
+  }
+}
+
+.header {
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    font-size: 32px;
+    color: var(--logo-color);
+    font-weight: 700;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+    .icon-wrapper {
+      margin-right: 8px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      transition: all ease 0.3s;
+
+      .icon {
+        font-size: 24px;
+        color: var(--icon-color);
+      }
+
+      &:hover {
+        background-color: #ddd;
+        &::after {
+          content: "";
+          height: 10px;
+          width: 300px;
+          top: 40px;
+          right: 0;
+          position: absolute;
+        }
+        .dropdown {
+          display: block;
+        }
+      }
+
+      .dropdown {
+        @include dropdown-style;
+      }
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid white;
+      transition: all ease-in-out 0.3s;
+      .avt {
+        font-size: 32px;
+        color: #00008b;
+        cursor: pointer;
+      }
+      &:hover {
+        border-color: #555;
+        &::after {
+          content: "";
+          height: 10px;
+          width: 300px;
+          top: 40px;
+          right: 0;
+          position: absolute;
+        }
+        .options {
+          display: block;
+        }
+      }
+      .options {
+        @include dropdown-style;
+        width: 140px;
+        min-height: fit-content;
+
+        .item {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
