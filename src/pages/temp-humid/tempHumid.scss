@@ -1,0 +1,32 @@
+.temp-humid {
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #6e6e6e;
+  }
+
+  .table {
+    margin: 12px 0 28px;
+    padding: 0 60px;
+  }
+
+  .logs {
+    .select {
+      width: 120px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .set-time {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .actions {
+    button {
+      margin-right: 4px;
+    }
+  }
+}
