@@ -11,6 +11,8 @@
   padding: 16px 20px;
   animation: drop 0.3s ease-in-out;
   transform-origin: top center;
+  background-color: white;
+  z-index: 2;
 
   .item {
     display: block;

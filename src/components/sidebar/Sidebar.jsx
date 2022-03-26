@@ -17,12 +17,12 @@ const Sidebar = () => {
           backgroundColor: "#f0f0ff",
           textDecoration: "none",
           borderRadius: "20px",
-          marginBottom: "8px",
+          marginBottom: "4px",
         }
       : {
           textDecoration: "none",
           borderRadius: "20px",
-          marginBottom: "8px",
+          marginBottom: "4px",
         };
   };
 
