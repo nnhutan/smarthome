@@ -41,7 +41,7 @@ const Report = () => {
       <div className="list-report">
         <h3 className="title"> Báo cáo</h3>
         <div className="list-container">
-          <Grid container spacing={2}>
+          <Grid container spacing={3}>
             <Grid item md={4}>
               <TempCard />
             </Grid>

@@ -1,5 +1,5 @@
 import { SimCardDownload, Thermostat } from "@mui/icons-material";
-import "./reportCart.scss";
+import "./reportCard.scss";
 
 const TempCard = () => {
   return (
