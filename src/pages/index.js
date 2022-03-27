@@ -6,16 +6,6 @@ import Register from "./register/Register";
 import Report from "./report/Report";
 import TempHumid from "./temp-humid/TempHumid";
 import Login from "./login/Login";
-import LightManager from "./light-manager/LightManager";
+import Light from "./light/Light";
 
-export {
-  Door,
-  Gas,
-  Home,
-  Manage,
-  Register,
-  Login,
-  Report,
-  TempHumid,
-  LightManager,
-};
+export { Door, Gas, Home, Manage, Register, Login, Report, TempHumid, Light };

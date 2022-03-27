@@ -9,6 +9,8 @@ import {
   Legend,
 } from "recharts";
 import data from "./fakeData";
+import TempCard from "../../components/report/TempCard";
+import { Grid } from "@mui/material";
 
 const Report = () => {
   return (
@@ -38,6 +40,28 @@ const Report = () => {
       </div>
       <div className="list-report">
         <h3 className="title"> Báo cáo</h3>
+        <div className="list-container">
+          <Grid container spacing={2}>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+            <Grid item md={4}>
+              <TempCard />
+            </Grid>
+          </Grid>
+        </div>
       </div>
     </div>
   );

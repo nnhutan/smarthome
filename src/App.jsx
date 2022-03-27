@@ -8,7 +8,7 @@ import {
   Login,
   Report,
   TempHumid,
-  LightManager,
+  Light,
 } from "./pages";
 import Layout from "./components/Layout";
 import RequireAuth from "./components/RequireAuth";
@@ -24,7 +24,7 @@ const App = () => {
             <Route element={<RequireAuth />}>
               <Route path="/" element={<Home />} />
               <Route path="manage" element={<Manage />} />
-              <Route path="light" element={<LightManager />} />
+              <Route path="light" element={<Light />} />
               <Route path="temp-humid" element={<TempHumid />} />
               <Route path="gas" element={<Gas />} />
               <Route path="door" element={<Door />} />

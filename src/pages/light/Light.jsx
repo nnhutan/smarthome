@@ -4,7 +4,7 @@ import Data from "./fakeData";
 import OverviewTable from "../../components/light/OverviewTable";
 import LogsTable from "../../components/door/LogsTable";
 
-const LightManager = () => {
+const Light = () => {
   const [data, setData] = useState(Data);
 
   return (
@@ -25,4 +25,4 @@ const LightManager = () => {
   );
 };
 
-export default LightManager;
+export default Light;
