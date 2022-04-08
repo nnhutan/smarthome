@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./gas.scss";
-import Data from "./fakeData";
+import { getData } from './fetch'
 import OverviewTable from "../../components/door/OverviewTable";
 import LogsTable from "../../components/door/LogsTable";
 
 const Gas = () => {
-  const [data, setData] = useState(Data);
-
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData().then((res) => {
+      setData(res)
+    })
+  }, [])
   return (
     <div className="gas">
       <div className="overview">
