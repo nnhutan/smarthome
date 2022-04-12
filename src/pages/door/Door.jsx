@@ -8,8 +8,14 @@ const Door = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getData().then((res) => {
+      console.log(res)
       setData(res)
-    })
+    });
+    setInterval(()=>{
+      getData().then((res) => {
+        console.log(res)
+        setData(res)
+    });}, 500) 
   }, [])
   return (
     <div className="door">

@@ -11,6 +11,11 @@ const Light = () => {
       console.log(res)
       setData(res)
     });
+    setInterval(()=>{
+      getData().then((res) => {
+        console.log(res)
+        setData(res)
+    });}, 500) 
   }, [])
   return (
     <div className="light">

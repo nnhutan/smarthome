@@ -19,7 +19,7 @@ const columnsConfig = (handleChange) => {
     },
     {
       field: "name",
-      headerName: "Tên cửa",
+      headerName: "Tên thiết bị",
       width: 120,
     },
     {
