@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import "./gas.scss";
-import { getData } from './fetch'
-import OverviewTable from "../../components/door/OverviewTable";
-import LogsTable from "../../components/door/LogsTable";
+import { getData } from "./fetch";
+import OverviewTable from "../../components/gas/OverviewTable";
+import LogsTable from "../../components/gas/LogsTable";
 
 const Gas = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     getData().then((res) => {
-      setData(res)
-    })
-  }, [])
+      setData(res);
+    });
+  }, []);
   return (
     <div className="gas">
       <div className="overview">

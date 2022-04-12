@@ -7,6 +7,7 @@ const data = [
     end: new Date("2018-01-01T00:00:00.000Z"),
     duration: 2,
     log: true,
+    value: 0,
     listLog: [
       {
         id: 1,
@@ -43,6 +44,7 @@ const data = [
     end: new Date("2018-01-01T00:00:00.000Z"),
     duration: 15,
     log: false,
+    value: 0,
     listLog: [
       {
         id: 1,
@@ -79,6 +81,7 @@ const data = [
     end: new Date("2018-01-01T00:00:00.000Z"),
     duration: 10,
     log: true,
+    value: 0,
     listLog: [
       {
         id: 1,
@@ -115,6 +118,7 @@ const data = [
     end: new Date("2018-01-01T00:00:00.000Z"),
     duration: 2,
     log: false,
+    value: 0,
     listLog: [
       {
         id: 1,
@@ -151,6 +155,7 @@ const data = [
     end: new Date("2018-01-01T00:00:00.000Z"),
     duration: 5,
     log: true,
+    value: 0,
     listLog: [
       {
         id: 1,
