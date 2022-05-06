@@ -8,11 +8,17 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import data from "./fakeData";
+import {getData} from "./fetch.js";
+import fakeData from './fakeData.js'
 import TempCard from "../../components/report/TempCard";
 import { Grid } from "@mui/material";
+import { useState, useEffect } from "react";
 
 const Report = () => {
+  const [data, setData] = useState(fakeData)
+  useEffect(() => {
+    getData().then((res) => setData(res))
+  }, [])
   return (
     <div className="report">
       <div className="overview">
@@ -34,7 +40,7 @@ const Report = () => {
             <Line type="monotone" dataKey="temp" stroke="#82ca9d" />
           </LineChart>
           <span className="label">
-            Nhiệt độ, độ ẩm trung bình trong 30 ngày qua
+            Nhiệt độ, độ ẩm trung bình
           </span>
         </div>
       </div>

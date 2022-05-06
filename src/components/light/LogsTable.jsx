@@ -90,6 +90,7 @@ const LogsTable = ({ data }) => {
       </div>
       {light && (
         <DataGrid
+          pageSize={10}
           autoHeight
           rows={data[light - 1].listLog}
           columns={columns}

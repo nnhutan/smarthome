@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./tempHumid.scss";
 import {getData} from './fetch'
 import OverviewTable from "../../components/temp-humid/OverviewTable";
-import LogsTable from "../../components/door/LogsTable";
+import LogsTable from "../../components/temp-humid/LogsTable";
 
 
 const TempHumid = () => {
@@ -16,7 +16,7 @@ const TempHumid = () => {
       getData().then((res) => {
         console.log(res)
         setData(res)
-    });}, 500) 
+    });}, 1000)
   }, [])
   return (
     <div className="temp-humid">

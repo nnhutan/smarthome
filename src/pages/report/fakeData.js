@@ -1,6 +1,6 @@
 const data = [
   {
-    day: 1,
+    day: new Date().getDate() + '/' + (new Date().getMonth() + 1),
     temp: 26,
     humid: 50,
   },

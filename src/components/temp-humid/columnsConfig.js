@@ -10,63 +10,17 @@ const columnsConfig = (handleChange) => {
     {
       field: "name",
       headerName: "Tên phòng",
-      width: 120,
-    },
-
-    {
-      field: "auto",
-      headerName: "Tự động",
-      renderCell: (params) => {
-        return (
-          <Switch
-            checked={params.row.auto}
-            onChange={(e) =>
-              handleChange(params.row.id, { auto: e.target.checked }, "auto")
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          />
-        );
-      },
+      width: 200,
     },
     {
       field: "temp",
       headerName: "Nhiệt độ",
+      width: 200,
     },
     {
       field: "humid",
       headerName: "Độ ẩm",
-    },
-    {
-      field: "duration",
-      headerName: "Cập nhật sau",
-      width: 100,
-      renderCell: (params) => {
-        return (
-          <FormControl>
-            <NativeSelect
-              defaultValue={params.row.duration}
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-              onChange={(e) => {
-                handleChange(
-                  params.row.id,
-                  { duration: e.target.value },
-                  "duration"
-                );
-              }}
-            >
-              <option value={2}>2 phút</option>
-              <option value={5}>5 phút</option>
-              <option value={10}>10 phút</option>
-              <option value={15}>15 phút</option>
-              <option value={20}>20 phút</option>
-            </NativeSelect>
-          </FormControl>
-        );
-      },
+      width: 200,
     },
     {
       field: "log",
@@ -84,24 +38,7 @@ const columnsConfig = (handleChange) => {
           />
         );
       },
-    },
-    {
-      field: "action",
-      headerName: "Hành động",
-      flex: 1,
-      renderCell: (params) => {
-        return (
-          <div className="actions" onClick={(e) => e.stopPropagation()}>
-            <Button variant="contained" size="small" color="success">
-              Detail
-            </Button>
-            <Button variant="contained" size="small" color="warning">
-              Log
-            </Button>
-          </div>
-        );
-      },
-    },
+    }
   ];
 };
 

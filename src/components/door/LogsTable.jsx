@@ -10,6 +10,7 @@ import { useState } from "react";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import TimePicker from "@mui/lab/TimePicker";
+import DatePicker from "@mui/lab/DatePicker";
 const LogsTable = ({ data }) => {
   const [door, setDoor] = useState("");
 
@@ -17,12 +18,33 @@ const LogsTable = ({ data }) => {
     {
       field: "id",
       headerName: "ID",
-      width: 80,
+      width: 120,
+    },
+    {
+      field: "date",
+      headerName: "Tháng / Ngày / Năm",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              views={['day', 'month', 'year']}
+              label="Date"
+              readOnly
+              value={params.row.time}
+              renderInput={(params) => (
+                <TextField {...params} variant="standard" />
+              )}
+              onChange={() => {}}
+            />
+          </LocalizationProvider>
+        );
+      },
     },
     {
       field: "time",
       headerName: "Thời gian",
-      width: 132,
+      width: 150,
       renderCell: (params) => {
         return (
           <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -62,15 +84,12 @@ const LogsTable = ({ data }) => {
               <em>None</em>
             </MenuItem>
             <MenuItem value={1}>Cửa 1</MenuItem>
-            <MenuItem value={2}> Cửa 2</MenuItem>
-            <MenuItem value={3}> Cửa 3</MenuItem>
-            <MenuItem value={4}> Cửa 4</MenuItem>
-            <MenuItem value={5}> Cửa 5</MenuItem>
           </Select>
         </FormControl>
       </div>
       {door && (
         <DataGrid
+          pageSize={5}
           autoHeight
           rows={data[door - 1].listLog}
           columns={columns}
