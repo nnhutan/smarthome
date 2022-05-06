@@ -1,7 +1,7 @@
 import axios from 'axios'
 const config = {
     headers: {
-        'X-AIO-Key': 'aio_nTsq28MxeF73f31XpMARar8IoO5t'
+        'X-AIO-Key': 'aio_RMiZ05Qvl5YSSpYWbsZ18JZYsvrL'
     }
 }
 const origin = 'https://io.adafruit.com/api/v2/giangnam1905'

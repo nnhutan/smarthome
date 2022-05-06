@@ -5,16 +5,17 @@ const columnsConfig = (handleChange) => {
     {
       field: "id",
       headerName: "ID",
-      width: 80,
+      width: 150,
     },
     {
       field: "name",
       headerName: "Tên đèn",
-      width: 120,
+      width: 200,
     },
     {
       field: "status",
       headerName: "Trạng thái",
+      width: 160,
       renderCell: (params) => {
         return (
           <Switch
@@ -33,31 +34,31 @@ const columnsConfig = (handleChange) => {
         );
       },
     },
-    {
-      field: "room",
-      headerName: "Phòng",
-    },
-    {
-      field: "auto",
-      headerName: "Tự động",
-      renderCell: (params) => {
-        return (
-          <Switch
-            checked={params.row.auto}
-            onChange={(e) =>
-              handleChange(params.row.id, { auto: e.target.checked }, "auto")
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          />
-        );
-      },
-    },
+    // {
+    //   field: "room",
+    //   headerName: "Phòng",
+    // },
+    // {
+    //   field: "auto",
+    //   headerName: "Tự động",
+    //   renderCell: (params) => {
+    //     return (
+    //       <Switch
+    //         checked={params.row.auto}
+    //         onChange={(e) =>
+    //           handleChange(params.row.id, { auto: e.target.checked }, "auto")
+    //         }
+    //         onClick={(e) => {
+    //           e.stopPropagation();
+    //         }}
+    //       />
+    //     );
+    //   },
+    // },
     {
       field: "duration",
-      headerName: "Hẹn giờ tắt bật",
-      width: 100,
+      headerName: "Hẹn giờ tắt/ bật",
+      width: 200,
       renderCell: (params) => {
         return (
           <FormControl>
@@ -98,23 +99,6 @@ const columnsConfig = (handleChange) => {
               e.stopPropagation();
             }}
           />
-        );
-      },
-    },
-    {
-      field: "action",
-      headerName: "Hành động",
-      flex: 1,
-      renderCell: (params) => {
-        return (
-          <div className="actions" onClick={(e) => e.stopPropagation()}>
-            <Button variant="contained" size="small" color="success">
-              Detail
-            </Button>
-            <Button variant="contained" size="small" color="warning">
-              Log
-            </Button>
-          </div>
         );
       },
     },

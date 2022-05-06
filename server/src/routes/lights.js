@@ -1,7 +1,11 @@
 import express from 'express'
 const lightsRouter = express.Router()
-import { getData } from '../controllers/lightsController.js'
+import { 
+    getData,
+    setData,
+} from '../controllers/lightsController.js'
 
 lightsRouter.get('/', getData)
+lightsRouter.post('/:lightId', setData)
 
 export { lightsRouter }

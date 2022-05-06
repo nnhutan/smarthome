@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./light.scss";
 import {getData} from './fetch'
 import OverviewTable from "../../components/light/OverviewTable";
-import LogsTable from "../../components/door/LogsTable";
+import LogsTable from "../../components/light/LogsTable";
 
 const Light = () => {
   const [data, setData] = useState([]);
@@ -15,7 +15,7 @@ const Light = () => {
       getData().then((res) => {
         console.log(res)
         setData(res)
-    });}, 500) 
+    });}, 1500) 
   }, [])
   return (
     <div className="light">

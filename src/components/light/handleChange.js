@@ -1,17 +1,25 @@
+import axios from 'axios';
+
+const origin = 'http://localhost:3001/api/v1'
+
+const lightOn = async (id) => {
+  axios.post(origin + '/lights/' + id).then().catch(err => console.log(err))
+}
+
 export function changeHandler(setData) {
   const handleChange = (id, payload, type) => {
     switch (type) {
       case "status":
         setData((prev) => {
-          prev[id - 1].status = payload.status;
+          if (id == '1828841') {
+            prev[0].status = payload.status;
+          }
+          else {
+            prev[1].status = payload.status;
+          }
           return [...prev];
         });
-        break;
-      case "auto":
-        setData((prev) => {
-          prev[id - 1].auto = payload.auto;
-          return [...prev];
-        });
+        lightOn(id);
         break;
       case "duration":
         setData((prev) => {
