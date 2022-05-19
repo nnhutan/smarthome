@@ -1,22 +1,26 @@
 import { useEffect, useState } from "react";
 import "./light.scss";
-import {getData} from './fetch'
+import { getData } from './fetch'
 import OverviewTable from "../../components/light/OverviewTable";
 import LogsTable from "../../components/light/LogsTable";
 
 const Light = () => {
   const [data, setData] = useState([]);
+  
   useEffect(() => {
     getData().then((res) => {
       console.log(res)
       setData(res)
     });
-    setInterval(()=>{
+    setInterval(() => {
       getData().then((res) => {
         console.log(res)
         setData(res)
-    });}, 1500) 
+      });
+    }, 5000)
   }, [])
+  
+
   return (
     <div className="light">
       <div className="overview">

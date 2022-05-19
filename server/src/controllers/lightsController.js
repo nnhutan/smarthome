@@ -2,7 +2,7 @@ import { light } from '../models/lightModel.js'
 import axios from 'axios'
 const config = {
     headers: {
-        'X-AIO-Key': 'aio_RMiZ05Qvl5YSSpYWbsZ18JZYsvrL'
+        'X-AIO-Key': 'aio_OFae33tKAy4VN5I8BZ3giUmShhJd'
     }
 }
 const origin = 'https://io.adafruit.com/api/v2/giangnam1905'

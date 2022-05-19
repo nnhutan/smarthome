@@ -1,14 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { updateAll } from './controllers/updateData.js'
-import { router } from './routes/index.js'
-import cors from 'cors'
+import { router } from './routes/index.js';
+import cors from 'cors';
 
 const app = express()
 mongoose.connect("mongodb+srv://dadn:123123123@cluster0.ssxqv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true }).catch(err => console.error(err));
 
 // updateAll();
-setInterval(updateAll, 1000)
+setInterval(updateAll, 500) 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
