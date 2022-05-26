@@ -44,7 +44,7 @@ const Report = () => {
           </span>
         </div>
       </div>
-      <div className="list-report">
+      {/* <div className="list-report">
         <h3 className="title"> Báo cáo</h3>
         <div className="list-container">
           <Grid container spacing={3}>
@@ -68,7 +68,7 @@ const Report = () => {
             </Grid>
           </Grid>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

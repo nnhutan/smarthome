@@ -5,7 +5,7 @@ const columnsConfig = (handleChange) => {
     {
       field: "id",
       headerName: "ID",
-      width: 80,
+      width: 180,
     },
     {
       field: "name",
@@ -22,23 +22,6 @@ const columnsConfig = (handleChange) => {
       headerName: "Độ ẩm",
       width: 200,
     },
-    {
-      field: "log",
-      headerName: "Theo dõi",
-      renderCell: (params) => {
-        return (
-          <Switch
-            checked={params.row.log}
-            onChange={(e) =>
-              handleChange(params.row.id, { log: e.target.checked }, "log")
-            }
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          />
-        );
-      },
-    }
   ];
 };
 

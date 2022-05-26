@@ -15,12 +15,12 @@ const columnsConfig = (handleChange) => {
     {
       field: "id",
       headerName: "ID",
-      width: 80,
+      width: 280,
     },
     {
       field: "name",
       headerName: "Tên cửa",
-      width: 220,
+      width: 320,
     },
     {
       field: "status",
@@ -30,24 +30,6 @@ const columnsConfig = (handleChange) => {
         return (
           <Switch
             checked={params.row.status}
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          />
-        );
-      },
-    },
-    {
-      field: "log",
-      width: 220,
-      headerName: "Theo dõi",
-      renderCell: (params) => {
-        return (
-          <Switch
-            checked={params.row.log}
-            onChange={(e) =>
-              handleChange(params.row.id, { log: e.target.checked }, "log")
-            }
             onClick={(e) => {
               e.stopPropagation();
             }}

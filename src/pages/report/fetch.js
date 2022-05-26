@@ -2,11 +2,10 @@ import axios from 'axios'
 
 const origin = 'http://localhost:3001/api/v1'
 
-const getData = async (max, min, average) => {
+const getData = async () => {
     const temp = await axios.get(origin + '/temp').then((res) => { return res.data })
     const humid = await axios.get(origin + '/humid').then((res) => { return res.data })
-    const tempLog = await temp.listLog.reverse().map((log, index) => 
-    {
+    const tempLog = await temp.listLog.map((log, index) => {
         return ({
             day: new Date(log.time).getDate() + '/' + (new Date(log.time).getMonth() + 1),
             temp: parseInt(log.action.slice(22)),
@@ -24,8 +23,8 @@ const getData = async (max, min, average) => {
             j++;
         }
     }
-
-    return tempLog.filter(e => e != null && !isNaN(e.temp) && !isNaN(e.humid))
+    
+    return tempLog.filter(e => e != null && !isNaN(e.temp) && !isNaN(e.humid)).reverse()
 }
 
-export {getData}
+export { getData }
